@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우리반 홈페이지만들기</title>
+    <style>
+        /* 전체 스타일 초기화 및 기본 설정 */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        /* 헤더 스타일 */
+        header { background-color: #4A90E2; color: white; text-align: center; padding: 2rem 1rem; }
+        header h1 { margin-bottom: 0.5rem; }
+        
+        /* 메인 컨테이너 */
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; }
+        
+        /* 카드 스타일 (섹션 공통) */
+        .card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+        .card h2 { color: #4A90E2; border-bottom: 2px solid #4A90E2; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+        
+        /* 공지사항 목록 */
+        .notice-list li { list-style: none; padding: 0.5rem 0; border-bottom: 1px dashed #eee; display: flex; justify-content: space-between; }
+        .notice-list .date { color: #888; font-size: 0.9rem; }
+        
+        /* 시간표 테이블 */
+        table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; text-align: center; }
+        th, td { border: 1px solid #ddd; padding: 0.5rem; font-size: 0.95rem; }
+        th { background-color: #e9f0f8; color: #333; }
+        
+        /* 바로가기 링크 버튼 */
+        .link-btn { display: block; background-color: #5cb85c; color: white; text-align: center; padding: 0.7rem; margin-bottom: 0.5rem; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background 0.2s; }
+        .link-btn:hover { background-color: #4cae4c; }
+        
+        /* 푸터 */
+        footer { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; }
+
+        /* 모바일 반응형 설정 */
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 헤더: 학급 이름에 맞게 수정하세요 -->
+    <header>
+        <h1>우리반 온라인 교실 🏫</h1>
+        <p>행복하고 즐거운 우리 반 공간입니다.</p>
+    </header>
+
+    <div class="container">
+        <!-- 왼쪽 영역: 공지사항 및 시간표 -->
+        <main>
+            <!-- 공지사항 섹션 -->
+            <section class="card">
+                <h2>📢 알림장</h2>
+                <ul class="notice-list">
+                    <li>
+                        <span>[준비물] 내일 미술 시간 찰흙 준비하기</span>
+                        <span class="date">05/18</span>
+                    </li>
+                    <li>
+                        <span>[과제] 수학 익힘책 45쪽까지 풀고 채점해오기</span>
+                        <span class="date">05/17</span>
+                    </li>
+                    <li>
+                        <span>[안내] 이번 주 금요일 학급 회의 안내</span>
+                        <span class="date">05/15</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 시간표 섹션 -->
+            <section class="card">
+                <h2>📅 주간 시간표</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>교시</th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th>금</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>국어</td>
+                            <td>수학</td>
+                            <td>영어</td>
+                            <td>과학</td>
+                            <td>사회</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>수학</td>
+                            <td>체육</td>
+                            <td>음악</td>
+                            <td>국어</td>
+                            <td>영어</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>과학</td>
+                            <td>국어</td>
+                            <td>수학</td>
+                            <td>사회</td>
+                            <td>도덕</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>사회</td>
+                            <td>영어</td>
+                            <td>과학</td>
+                            <td>기술가정</td>
+                            <td>체육</td>
+                        </tr>
+                        <!-- 점심시간 생략 혹은 추가 가능 -->
+                        <tr>
+                            <td>5</td>
+                            <td>영어</td>
+                            <td>과학</td>
+                            <td>미술</td>
+                            <td>한문</td>
+                            <td>진로</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>체육</td>
+                            <td>사회</td>
+                            <td>미술</td>
+                            <td>컴퓨터</td>
+                            <td>창체</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <!-- 오른쪽 영역: 바로가기 링크 및 교사 소개 -->
+        <aside>
+            <!-- 바로가기 섹션 -->
+            <section class="card">
+                <h2>🔗 유용한 링크</h2>
+                <!-- href="링크주소" 부분에 실제 사이트 주소를 넣으세요 -->
+                <a href="https://www.ebsonlineclass.co.kr/" target="_blank" class="link-btn">EBS 온라인 클래스</a>
+                <a href="https://classroom.google.com/" target="_blank" class="link-btn" style="background-color: #4285F4;">구글 클래스룸</a>
+                <a href="https://www.keris.or.kr/" target="_blank" class="link-btn" style="background-color: #f0ad4e;">e학습터</a>
+            </section>
+
+            <!-- 선생님 안내 섹션 -->
+            <section class="card">
+                <h2>👨‍🏫 안내</h2>
+                <p><strong>담임 교사:</strong> OOO 선생님</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">문의 사항이 있다면 학교 내선 번호나 e메일로 연락 주세요.</p>
+            </section>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 우리 중학교 3학년 1반. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
